@@ -12,8 +12,12 @@
         android:id="@+id/topAppBar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
+        android:layout_marginBottom="18dp"
         android:background="@color/purpleMain"
-        android:elevation="4dp">
+        android:elevation="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/maths_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <!-- Container inside Toolbar -->
         <RelativeLayout
@@ -24,14 +28,14 @@
 
             <!-- Back Arrow -->
             <ImageView
-                android:id="@+id/back"
+                android:id="@+id/Back"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="8dp"
-                android:src="@drawable/ic_arrow_back"
-                android:contentDescription="Back" />
+                android:contentDescription="Back"
+                android:src="@drawable/ic_arrow_back" />
 
             <!-- Total Questions -->
             <TextView
@@ -40,8 +44,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="Learning Lounge"
-                android:textSize="16sp"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
 
             <!-- Centered Logo/Image -->
             <ImageView
@@ -51,8 +55,8 @@
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="8dp"
-                android:src="@drawable/learning_lounge_logo"
-                android:contentDescription="Learning Lounge" />
+                android:contentDescription="Learning Lounge"
+                android:src="@drawable/learning_lounge_logo" />
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 
@@ -90,6 +94,39 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/maths_img" />
+    <ImageView
+        android:id="@+id/movement_img"
+        android:layout_width="392dp"
+        android:layout_height="180dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="12dp"
+        android:contentDescription="fractions"
+        android:scaleType="fitXY"
+        android:src="@drawable/movement_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/movementbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="12dp"
+        android:backgroundTint="@color/purpleMain"
+        android:elevation="6dp"
+        android:padding="16dp"
+        android:scaleType="fitXY"
+        android:text="PE"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:cornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/movement_img"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

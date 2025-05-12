@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -28,7 +29,15 @@ public class GameCentre extends AppCompatActivity {
                 startActivity(open);
             }
         });
-        ImageView backButton = findViewById(R.id.back); // Use ImageView if it's an ImageView
+        Button btn3 = findViewById(R.id.movementbtn);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent open = new Intent(GameCentre.this, movement.class);
+                startActivity(open);
+            }
+        });
+        ImageView backButton = findViewById(R.id.Back); // Use ImageView if it's an ImageView
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

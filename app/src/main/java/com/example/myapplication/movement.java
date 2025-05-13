@@ -1,20 +1,23 @@
 package com.example.myapplication;
 
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import androidx.appcompat.app.AppCompatActivity;
 import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class movement extends AppCompatActivity implements SensorEventListener {
 
@@ -28,10 +31,13 @@ public class movement extends AppCompatActivity implements SensorEventListener {
     private TextView distanceText;
     private Button startButton;
 
+    private static final int ACTIVITY_RECOGNITION_PERMISSION_CODE = 1001;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movement);
+
         ImageView backButton = findViewById(R.id.Back); // Use ImageView if it's an ImageView
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +52,20 @@ public class movement extends AppCompatActivity implements SensorEventListener {
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         stepDetector = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
+
+        // === Runtime permission request for ACTIVITY_RECOGNITION ===
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            if (checkSelfPermission(Manifest.permission.ACTIVITY_RECOGNITION) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{Manifest.permission.ACTIVITY_RECOGNITION}, ACTIVITY_RECOGNITION_PERMISSION_CODE);
+            }
+        }
+
+        // Check sensor availability
+        if (stepDetector == null) {
+            Toast.makeText(this, "Step detector sensor not available!", Toast.LENGTH_LONG).show();
+            startButton.setEnabled(false);
+            return;
+        }
 
         startButton.setOnClickListener(view -> startRun());
     }
@@ -119,6 +139,18 @@ public class movement extends AppCompatActivity implements SensorEventListener {
             sensorManager.registerListener(this, stepDetector, SensorManager.SENSOR_DELAY_UI);
         }
     }
-}
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == ACTIVITY_RECOGNITION_PERMISSION_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(this, "Permission granted!", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Permission denied. Step detection may not work.", Toast.LENGTH_LONG).show();
+                startButton.setEnabled(false);
+            }
+        }
+    }
+}
 

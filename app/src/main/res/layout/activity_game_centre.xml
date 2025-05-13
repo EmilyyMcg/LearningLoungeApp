@@ -12,12 +12,11 @@
         android:id="@+id/topAppBar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:layout_marginBottom="18dp"
         android:background="@color/purpleMain"
         android:elevation="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/maths_img"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <!-- Container inside Toolbar -->
         <RelativeLayout
@@ -61,72 +60,94 @@
     </androidx.appcompat.widget.Toolbar>
 
 
-    <ImageView
-        android:id="@+id/maths_img"
-        android:layout_width="392dp"
-        android:layout_height="180dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="12dp"
-        android:contentDescription="fractions"
-        android:scaleType="fitXY"
-        android:src="@drawable/maths_img"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topAppBar" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="12dp"
-        android:backgroundTint="@color/purpleMain"
-        android:elevation="6dp"
-        android:padding="16dp"
-        android:scaleType="fitXY"
-        android:text="Maths"
-        android:textColor="@android:color/white"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:cornerRadius="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/maths_img" />
-    <ImageView
-        android:id="@+id/movement_img"
-        android:layout_width="392dp"
-        android:layout_height="180dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="12dp"
-        android:contentDescription="fractions"
-        android:scaleType="fitXY"
-        android:src="@drawable/movement_img"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
-
-    <Button
-        android:id="@+id/movementbtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="12dp"
-        android:backgroundTint="@color/purpleMain"
-        android:elevation="6dp"
-        android:padding="16dp"
-        android:scaleType="fitXY"
-        android:text="PE"
-        android:textColor="@android:color/white"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:cornerRadius="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/movement_img"/>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Maths Image with Shadow -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/shadowMa"
+            android:layout_width="392dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/maths_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="fractions"
+                android:scaleType="fitXY"
+                android:src="@drawable/maths_img" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="12dp"
+            android:backgroundTint="@color/purpleMain"
+            android:elevation="6dp"
+            android:padding="16dp"
+            android:scaleType="fitXY"
+            android:text="Maths"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:cornerRadius="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shadowMa" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/shadowM"
+            android:layout_width="392dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button2">
+
+            <ImageView
+                android:id="@+id/movement_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="fractions"
+                android:scaleType="fitXY"
+                android:src="@drawable/movement_img" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <Button
+            android:id="@+id/movementbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="12dp"
+            android:backgroundTint="@color/purpleMain"
+            android:elevation="6dp"
+            android:padding="16dp"
+            android:scaleType="fitXY"
+            android:text="PE"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:cornerRadius="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shadowM" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

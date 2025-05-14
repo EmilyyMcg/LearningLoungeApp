@@ -80,6 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:text="Ans A"
+            android:textColor="@color/white"
             android:backgroundTint="@color/purpleMain"/>
 
         <Button
@@ -88,6 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:text="Ans B"
+            android:textColor="@color/white"
             android:backgroundTint="@color/purpleMain"/>
 
         <Button
@@ -96,6 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:text="Ans C"
+            android:textColor="@color/white"
             android:backgroundTint="@color/purpleMain"/>
 
         <Button
@@ -104,6 +107,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:text="Ans D"
+            android:textColor="@color/white"
             android:backgroundTint="@color/purpleMain"/>
     </LinearLayout>
 
@@ -115,6 +119,7 @@
         android:layout_centerInParent="true"
         android:layout_marginBottom="200dp"
         android:text="Submit"
+        android:textColor="@color/white"
         android:backgroundTint="@color/purpleMain"/>
 
 </RelativeLayout>

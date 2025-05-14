@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -25,24 +26,33 @@ public class GameCentre extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent open = new Intent(GameCentre.this, Maths.class);
-                startActivity(open);
+                Intent openMa = new Intent(GameCentre.this, Maths.class);
+                startActivity(openMa);
             }
         });
         Button btn3 = findViewById(R.id.movementbtn);
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent open = new Intent(GameCentre.this, movement.class);
-                startActivity(open);
+                Intent openMo = new Intent(GameCentre.this, movement.class);
+                startActivity(openMo);
+            }
+        });
+        Button btn4 = findViewById(R.id.geographybtn);
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("GameCentre","button Clicked");
+                Intent openG = new Intent(GameCentre.this, geography.class);
+                startActivity(openG);
             }
         });
         ImageView backButton = findViewById(R.id.Back); // Use ImageView if it's an ImageView
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent open = new Intent(GameCentre.this, MainActivity.class);
-                startActivity(open);
+                Intent backM = new Intent(GameCentre.this, MainActivity.class);
+                startActivity(backM);
             }
         });
 

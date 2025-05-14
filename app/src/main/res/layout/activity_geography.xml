@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".geography"
+    android:background="@color/background">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/purpleMain"
+        android:elevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Container inside Toolbar -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
+
+            <!-- Back Arrow -->
+            <ImageView
+                android:id="@+id/Back"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:contentDescription="Back"
+                android:src="@drawable/ic_arrow_back" />
+
+            <!-- Total Questions -->
+            <TextView
+                android:id="@+id/learing_lounge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/nunito_bold"
+                android:text="Geography"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+            <!-- Centered Logo/Image -->
+            <ImageView
+                android:id="@+id/center_logo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="Learning Lounge"
+                android:src="@drawable/learning_lounge" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <ImageView
+        android:id="@+id/flowerImage"
+        android:layout_width="319dp"
+        android:layout_height="491dp"
+        android:layout_marginTop="56dp"
+        android:contentDescription="fractions"
+        android:scaleType="fitXY"
+        android:src="@drawable/flower"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topAppBar" />
+
+    <TextView
+        android:id="@+id/descriptionText"
+        android:layout_width="363dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/rounded_background"
+        android:padding="12dp"
+        android:text="Click a part to learn more"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnRoot" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnStem"
+        android:layout_width="147dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="420dp"
+        android:background="@drawable/arrow_r"
+        android:text="Stem"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:backgroundTint="@color/purpleMain" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRoot"
+        android:layout_width="147dp"
+        android:layout_height="74dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/arrow_r"
+        android:text="Root"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.204"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnStem"
+        app:backgroundTint="@color/purpleMain" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPetal"
+        android:layout_width="147dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="168dp"
+        android:background="@drawable/arrow_icon"
+        android:text="Petal"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.939"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:backgroundTint="@color/purpleMain" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLeaf"
+        android:layout_width="147dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/arrow_icon"
+        android:text="Leaf"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.939"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnPetal"
+        app:backgroundTint="@color/purpleMain"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

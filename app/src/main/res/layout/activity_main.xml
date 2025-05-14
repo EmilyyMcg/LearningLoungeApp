@@ -5,50 +5,69 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/background"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/titleText"
-        android:layout_width="0dp"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/shadowMa"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="WELCOME TO THE"
-        android:textColor="@color/purpleMain"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="49dp"
+        app:cardBackgroundColor="@color/background"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="false"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.235" />
+        app:layout_constraintTop_toBottomOf="@+id/subtitleText">
+
+
+        <!-- Book Image -->
+        <ImageView
+            android:id="@+id/center_logo"
+            android:layout_width="302dp"
+            android:layout_height="186dp"
+            android:layout_margin="1dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="Learning Lounge"
+            android:scaleType="fitXY"
+            android:src="@drawable/learning_lounge" />
+
+    </com.google.android.material.card.MaterialCardView>
 
     <TextView
         android:id="@+id/subtitleText"
-        android:layout_width="327dp"
-        android:layout_height="39dp"
+        android:layout_width="303dp"
+        android:layout_height="144dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="88dp"
+        android:fontFamily="@font/nunito_bold"
         android:gravity="center"
         android:text="LEARNING LOUNGE"
         android:textColor="@color/purpleMain"
-        android:textSize="35sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/shadowMa"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.431" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="247dp"
-        android:layout_height="110dp"
-        android:layout_marginStart="82dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="82dp"
-        android:layout_marginBottom="163dp"
+        android:layout_width="313dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="126dp"
         android:backgroundTint="@color/purpleMain"
+        android:fontFamily="@font/nunito_bold"
         android:elevation="6dp"
         android:padding="16dp"
         android:text="LET'S PLAY"
@@ -58,7 +77,6 @@
         app:cornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subtitleText" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

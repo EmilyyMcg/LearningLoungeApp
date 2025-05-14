@@ -43,6 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="Learning Lounge"
+                android:fontFamily="@font/nunito_bold"
                 android:textColor="@android:color/white"
                 android:textSize="16sp" />
 
@@ -55,7 +56,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="8dp"
                 android:contentDescription="Learning Lounge"
-                android:src="@drawable/learning_Lounge" />
+                android:src="@drawable/learning_lounge" />
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 
@@ -101,6 +102,7 @@
             android:textColor="@android:color/white"
             android:textSize="15sp"
             android:textStyle="bold"
+            android:fontFamily="@font/nunito_bold"
             app:cornerRadius="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -145,9 +147,28 @@
             android:textSize="15sp"
             android:textStyle="bold"
             app:cornerRadius="16dp"
+            android:fontFamily="@font/nunito_bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/shadowM" />
 
+    <Button
+        android:id="@+id/geographybtn"
+        android:layout_width="367dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="@color/purpleMain"
+        android:fontFamily="@font/nunito_bold"
+        android:text="geography"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:cornerRadius="16dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.363"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -55,7 +55,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="8dp"
                 android:contentDescription="Learning Lounge"
-                android:src="@drawable/learning_lounge_logo" />
+                android:src="@drawable/learning_Lounge" />
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 

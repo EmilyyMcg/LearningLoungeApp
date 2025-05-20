@@ -120,7 +120,7 @@ public class movement extends AppCompatActivity implements SensorEventListener {
             distanceText.setText("Distance: " + (int) distanceCovered + " meters");
 
             // Check if the user has covered 1 kilometer (1000 meters)
-            if (distanceCovered >= 10) {
+            if (distanceCovered >= 1000) {
                 finishRun();
             }
         }
